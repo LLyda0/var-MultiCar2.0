@@ -35,8 +35,11 @@ class Form {
     });
 
     this.reset.mousePressed(()=>{
-      player.updateCount(0);
-      game.update(0);
+      database.ref('/').set({
+        gameState:0,
+        playerCount:0,
+        carsAtEnd:0
+      })
     });
 
   }
